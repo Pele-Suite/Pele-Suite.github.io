@@ -11,7 +11,7 @@
     <title>Pele-Suite: Suite of adaptive mesh reacting flow codes for reacting flows</title>
     <link rel="icon" href="web_icon.ico" type="image/x-icon">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="" />
+    <meta name="description" content="The Pele Suite: open-source adaptive mesh refinement codes for simulating reacting flows on CPUs and GPUs, built on AMReX." />
     <meta name="keywords" content="" />
     <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
     <script src="js/jquery.min.js"></script>
@@ -34,7 +34,8 @@
             <a href="index.html" class="button special">Home</a>
             <a href="pubs.html" class="button special">Publications</a>
             <a href="gallery.html" class="button special">Gallery</a>
-            <a href="help.html" class="button special">Get Help</a>
+            <a href="governance.html" class="button special">Governance</a>
+            <a href="community.html" class="button special">Community</a>
           </li>
 	</ul>
       </nav>
@@ -43,16 +44,167 @@
     <!-- Banner -->
     <section id="banner">
       <h2>Pele Suite</h2>
-      <p>A suite of adaptive mesh hydrodynamics simulation codes for reacting flows
+      <p>A suite of adaptive mesh hydrodynamics simulation codes for reacting flows</p>
       <ul class="actions">
 	<li>
-	  <a href="https://pele-suite.github.io/PeleLMeX" class="button">PeleLMeX</a>
 	  <a href="https://github.com/Pele-Suite/PeleC" class="button">PeleC</a>
+	  <a href="https://github.com/Pele-Suite/PeleLMeX" class="button">PeleLMeX</a>
 	  <a href="https://github.com/Pele-Suite/PelePhysics" class="button">PelePhysics</a>
 	  <a href="https://github.com/Pele-Suite/PeleAnalysis" class="button">PeleAnalysis</a>
 	</li>
       </ul>
-    </section><!-- Two -->
+    </section>
+
+    <!-- Overview -->
+    <section id="overview" class="wrapper">
+      <div class="container">
+	<header class="major">
+	  <h2>What is the Pele Suite?</h2>
+	  <p>Pele is a collection of open-source software for simulating reacting flows, from laboratory flames to gas turbines or explosions. The codes share a common physics library and are built on the <a href="https://amrex-codes.github.io/amrex/">AMReX</a> adaptive mesh refinement (AMR) framework. The software runs on laptops, CPU clusters as well as GPU-accelerated supercomputers.</p>
+	</header>
+      </div>
+    </section>
+
+    <!-- Codes -->
+    <section id="codes" class="wrapper style1">
+      <div class="container">
+	<header class="major">
+	  <h2>The codes</h2>
+	</header>
+	<div class="row">
+	  <div class="6u 12u$(small)">
+	    <section class="box">
+	      <h3>PeleC</h3>
+	      <p>Compressible solver for reacting flows. It resolves acoustics and shocks, so it suits high-speed and supersonic combustion, detonations and problems where coupling of the flame with the pressure waves matter.</p>
+          <a href="https://pele-suite.github.io/PeleC" class="button small">Documentation</a>
+	      <a href="https://github.com/Pele-Suite/PeleC" class="button small alt">GitHub</a>
+	    </section>
+	  </div>
+	  <div class="6u$ 12u$(small)">
+	    <section class="box">
+	      <h3>PeleLMeX</h3>
+	      <p>Low Mach number solver for reacting flows, where flow speeds are well below the speed of sound. In this regime, the acoustic time step restriction can be lifted, so it suits turbulent deflagration flames, burners and other subsonic combustion problems.</p>
+	      <a href="https://pele-suite.github.io/PeleLMeX" class="button small">Documentation</a>
+	      <a href="https://github.com/Pele-Suite/PeleLMeX" class="button small alt">GitHub</a>
+	    </section>
+	  </div>
+	  <div class="6u 12u$(small)">
+	    <section class="box">
+	      <h3>PelePhysics</h3>
+	      <p>The physics library shared by PeleLMeX and PeleC: chemical mechanisms, equations of state, transport properties and chemistry integrators, plus modules for sprays, soot and radiation.</p>
+          <a href="https://pele-suite.github.io/PelePhysics" class="button small">Documentation</a>
+	      <a href="https://github.com/Pele-Suite/PelePhysics" class="button small alt">GitHub</a>
+	    </section>
+	  </div>
+	  <div class="6u$ 12u$(small)">
+	    <section class="box">
+	      <h3>PeleAnalysis</h3>
+	      <p>Post-processing tools for the AMReX plotfiles the solvers write, for extracting statistics, surfaces and other quantities from large adaptive mesh datasets.</p>
+          <a href="https://peleanalysis.readthedocs.io/en/latest/" class="button small">Documentation</a>
+	      <a href="https://github.com/Pele-Suite/PeleAnalysis" class="button small alt">GitHub</a>
+	    </section>
+	  </div>
+	</div>
+      </div>
+    </section>
+
+    <!-- Which code -->
+    <section id="which-code" class="wrapper">
+      <div class="container">
+	<header class="major">
+	  <h2>Which code should I use?</h2>
+	  <p>Both solvers use PelePhysics for chemistry and transport.
+         The choice mostly depends on how fast the flow is. The publication page lists recent publications with both solvers
+         as well as a one-sentence description of the topic. Feel free to explore the list for inspiration !</p> 
+	</header>
+	<div class="table-wrapper">
+	  <table>
+	    <thead>
+	      <tr>
+		<th>If your problem involves&hellip;</th>
+		<th>Start with</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr>
+		<td>laminar flames, turbulent deflagrations, burners, jets and plumes</td>
+		<td>PeleLMeX</td>
+	      </tr>
+	      <tr>
+		<td>Supersonic flows, shocks, detonations, thermo-acoustic, real-gas combustion</td>
+		<td>PeleC</td>
+	      </tr>
+	      <tr>
+		<td>Simulating 0D reactors, exploring new chemical mechanisms or adding new physics models</td>
+		<td>PelePhysics</td>
+	      </tr>
+	      <tr>
+		<td>Analyzing results from either solver with AMReX-native IO and MPI support (large scale runs)</td>
+		<td>PeleAnalysis</td>
+	      </tr>
+	    </tbody>
+	  </table>
+	</div>
+      </div>
+    </section>
+
+    <!-- History -->
+    <section id="history" class="wrapper style1">
+      <div class="container">
+	<header class="major">
+	  <h2>History</h2>
+	  <p>Pele grew out of more than two decades of work on adaptive mesh refinement and
+         low Mach number combustion at the
+         <a href="https://ccse.lbl.gov/">Center for Computational Sciences and Engineering</a> (CCSE) at Lawrence Berkeley National Laboratory.</p>
+	</header>
+
+	<h4>1990s: adaptive projection methods</h4>
+	<p>The groundwork was laid by CCSE's adaptive projection methods for variable-density
+       flow (<a href="https://doi.org/10.1006/jcph.1998.5890">Almgren, Bell, Colella, Howell and Welcome, 1998</a>),
+       the basis of the IAMR code. Pember et al. extended the approach to low Mach number combustion
+       the same year, in what was the first use of local adaptive mesh refinement for unsteady low Mach number combustion (<a href="https://doi.org/10.1080/00102209808915770">Pember et al., 1998</a>).</p>
+
+
+	<h4>2000: LMC</h4>
+	<p>Marc Day and John Bell wrote LMC, a low Mach number combustion code built on
+       CCSE's BoxLib framework (AMReX's predecessor). Its core algorithm, discretely
+       conserves mass and energy with detailed chemistry and transport
+       (<a href="https://doi.org/10.1088/1364-7830/4/4/309">Day and Bell, 2000</a>).
+       Over the next fifteen years, supported by DOE's applied mathematics program and SciDAC,
+       LMC was used for laboratory-scale flame simulations as well as highly turbulent canonical flames.
+       In 2012, <a href="https://ccse.lbl.gov/Publications/nonaka/LMC_SDC.pdf"> Nonanka et al. </a> introduced the spectral deferred correction
+       coupling of advection, diffusion and reactions that PeleLMeX still uses today.</p>
+
+	<h4>2016&ndash;2023: the Exascale Computing Project</h4>
+	<p>Under the DOE Exascale Computing Project, LMC was renamed PeleLM in 2017 and transitioned from Boxlib
+       to the new <a href="https://amrex-codes.github.io/amrex/">AMReX framework</a>. It was joined by PeleC, a compressible solver whose first version was
+       derived from CCSE's astrophysics code Castro. The Pele codes were rewritten from mixed Fortran and C++
+       to C++, and were ported to the Exascale machines through AMReX abstraction layer.
+       PeleLM and PeleC were released on GitHub in 2018, along with the shared physics library
+       PelePhysics and the post-processing tools in PeleAnalysis.
+       PeleLMeX, a version of PeleLM without level sub-cycling, was started in 2021 and has now replaced it.</p>
+
+	<h4>Today</h4>
+	<p>The Pele-Suite is developed by a multi-institution team, led from NREL, with partners
+       at LBNL, Sandia, Oak Ridge, Argonne and Lawrence Livermore and a growing community of users.
+       In 2026, the suite received an <a href="https://cs.lbl.gov/news-and-events/news/2026/pele-combustion-simulation-suite-named-rd-100-award-winner/">R&amp;D 100 Award</a>.</p>
+      </div>
+    </section>
+
+    <!-- Get started -->
+    <section id="get-started" class="wrapper">
+      <div class="container">
+	<header class="major">
+	  <h2>Get involved</h2>
+	  <p>The solvers are developed openly on GitHub. Browse the publications to see what the Pele-Suite has been used for, or reach out if you have questions.</p>
+	</header>
+	<ul class="actions">
+	  <li><a href="https://github.com/Pele-Suite" class="button special icon fa-github">Pele-Suite on GitHub</a></li>
+	  <li><a href="pubs.html" class="button icon fa-book">Publications</a></li>
+	  <li><a href="community.html" class="button alt">Community</a></li>
+	</ul>
+      </div>
+    </section>
 
     <!-- Footer -->
     <footer id="footer">
